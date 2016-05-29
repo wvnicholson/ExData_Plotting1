@@ -1,5 +1,9 @@
 # plot1.R
 
+# For plot1.R (and the other R scripts) to work, you need to have the data file in the current
+# directory.  I've not uploaded the data file onto github because of it's large size and
+# general availability on the course.
+
 # Using skip to read from the first 1st February 2007 entry and nrows to ensure we just read until
 # the last 2nd February 2007 entry.
 # skip also loses the table headings so read those in with the first row before getting the data for
