@@ -13,8 +13,12 @@ data$Sub_metering_1 = as.numeric(data$Sub_metering_1)
 data$Sub_metering_2 = as.numeric(data$Sub_metering_2)
 data$Sub_metering_3 = as.numeric(data$Sub_metering_3)
 
-par(cex = .8)
+png(file = "plot3.png")
+
+par(cex = .9)
 plot(data$datetime, data$Sub_metering_1, type = "l", xlab = "", ylab = "Energy sub metering", col = "black")
 lines(data$datetime, data$Sub_metering_2, col = "red")
 lines(data$datetime, data$Sub_metering_3, col = "blue")
 legend("topright", lty = c(1, 1, 1), col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+
+dev.off()

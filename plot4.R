@@ -16,7 +16,9 @@ data$Sub_metering_1 = as.numeric(data$Sub_metering_1)
 data$Sub_metering_2 = as.numeric(data$Sub_metering_2)
 data$Sub_metering_3 = as.numeric(data$Sub_metering_3)
 
-par(mfrow = c(2,2), cex = .52)
+png(file = "plot4.png")
+
+par(mfrow = c(2,2), cex = .8)
 
 # Earlier plot 2 content again
 plot(data$datetime, data$Global_active_power, type = "l", xlab = "", ylab = "Global Active Power")
@@ -31,4 +33,4 @@ legend("topright", lty = c(1, 1, 1), col = c("black", "red", "blue"), legend = c
 # New plot with Global_reactive_power
 plot(data$datetime, data$Global_reactive_power, type = "l", xlab = "datetime", ylab = "Global_reactive_power")
 
-
+dev.off()

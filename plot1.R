@@ -23,8 +23,16 @@ data = read.csv2(unz(dataFileName, "household_power_consumption.txt"), skip = 66
       Sub_metering_3
 # 69516         18.000
 
+
+
 data$Global_active_power = as.numeric(data$Global_active_power)
+
+png(file = "plot1.png")
+
 # Messing about with "cex" needed to match ticks on the model version of this plot.
 # (Apparently "ylim" and "cex.lab", etc not needed.)
-par(cex = .7)
+par(cex = .9)
 hist(data$Global_active_power, main = "Global Active Power", col = "red", xlab = "Global Active Power (kilowatts)")
+
+#dev.copy(png, file = "plot1.png")
+dev.off()
