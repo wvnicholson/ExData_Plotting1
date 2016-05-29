@@ -4,8 +4,10 @@
 # the last 2nd February 2007 entry.
 # skip also loses the table headings so read those in with the first row before getting the data for
 # the reauired dates
-colNamesData = read.csv2(unz("../data/exdata-data-household_power_consumption.zip", "household_power_consumption.txt"), nrows = 1)
-data = read.csv2(unz("../data/exdata-data-household_power_consumption.zip", "household_power_consumption.txt"), skip = 66636, nrows = 2880, col.names = names(colNamesData), as.is = TRUE)
+dataFileName="exdata-data-household_power_consumption.zip"
+colNamesData = read.csv2(unz(dataFileName, "household_power_consumption.txt"), nrows = 1)
+data = read.csv2(unz(dataFileName, "household_power_consumption.txt"), skip = 66636, nrows = 2880, col.names = names(colNamesData), as.is = TRUE)
+
 
 data$Global_active_power = as.numeric(data$Global_active_power)
 #data$Date = as.Date(data$Date)
