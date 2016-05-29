@@ -16,4 +16,9 @@ data$Global_active_power = as.numeric(data$Global_active_power)
 #data$datetime = strptime(paste(data$Date, data$Time), format = "%Y-%m-%d %H:%M:%S")
 data$datetime = strptime(paste(data$Date, data$Time), format = "%d/%m/%Y %H:%M:%S")
 
-plot(data$datetime, data$Global_active_power, type = "l", xlab = "", ylab = "Global Active Power (kilowatts)", cex.lab = .8, cex.axis = .8)
+png(file = "plot2.png")
+
+par(cex = .9)
+plot(data$datetime, data$Global_active_power, type = "l", xlab = "", ylab = "Global Active Power (kilowatts)")
+
+dev.off()
