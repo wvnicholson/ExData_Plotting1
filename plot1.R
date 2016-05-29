@@ -24,5 +24,7 @@ data = read.csv2(unz(dataFileName, "household_power_consumption.txt"), skip = 66
 # 69516         18.000
 
 data$Global_active_power = as.numeric(data$Global_active_power)
-# Does not match the ticks on the y-axis in the model example
+# Messing about with "cex" needed to match ticks on the model version of this plot.
+# (Apparently "ylim" and "cex.lab", etc not needed.)
+par(cex = .7)
 hist(data$Global_active_power, main = "Global Active Power", col = "red", xlab = "Global Active Power (kilowatts)")
